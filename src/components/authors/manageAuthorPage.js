@@ -29,6 +29,7 @@ var ManageAuthorPage = React.createClass({
 	},
 
 	componentWillMount: function() {
+		console.log('componentWillMount:: props: ' + this.props.params.id);
 		var authorId = this.props.params.id; //from the path '/author:id'
 		if (authorId) {
 			this.setState({author: AuthorStore.getAuthorById(authorId) });
@@ -80,6 +81,7 @@ var ManageAuthorPage = React.createClass({
 	},
 
 	render: function() {
+		console.log('render:: state: ' + this.state.author);
 		return (
 			<AuthorForm
 				author={this.state.author}
